@@ -4,4 +4,5 @@
 <hr />
 Bot designed for Telegram and built with NodeJs. It receives and stores the subscribers' ID, username, and account parameters to then send messages to all of them with another command.
 <hr />
+<br />
 Bot diseñado para Telegram y creado con NodeJs. Recibe y almacena los parámetros de ID, el nombre de usuario y la cuenta de los suscriptores para luego enviar mensajes a todos ellos con otro comando.
