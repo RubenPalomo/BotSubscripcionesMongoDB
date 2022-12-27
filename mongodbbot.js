@@ -4,7 +4,6 @@ const bot = new TelegramBot(token, { polling: true });
 const translate = require("@iamtraction/google-translate");
 const util = require("util");
 const { MongoClient, ServerApiVersion } = require("mongodb");
-
 const uri =
   "mongodb+srv://<user>:<password>@mongobbdd.sqlpw.mongodb.net/?retryWrites=true&w=majority";
 const client = new MongoClient(uri, {
@@ -37,29 +36,7 @@ function translateText(msg, string) {
 
 //  DATABASE FUNCTIONS
 
-// Function to get the user by id
-const getUserById = (id) => {
-  var user = "";
-  client.connect(async (err) => {
-    const collection = client.db("MongoDB").collection("TelegramBot");
-    user = await collection.findOne({ telegramId: id });
-    client.close();
-  });
-  return user;
-};
-
-// Function to get the user by name
-const getUserByUserName = (userName) => {
-  var user = "";
-  client.connect(async (err) => {
-    const collection = client.db("MongoDB").collection("TelegramBot");
-    user = await collection.findOne({ user: userName });
-    client.close();
-  });
-  return user;
-};
-
-// Function to get all the IDs of all the users
+// Function to get all the IDs of all the users and send them a message
 const sendMessageToAll = (message) => {
   client.connect(async (err) => {
     const collection = client.db("MongoDB").collection("TelegramBot");
@@ -89,7 +66,7 @@ const insertUser = (msg) => {
   });
 };
 
-// Function to get the user by id
+// Function to check if the user exists
 const checkAndAdd = async (msg) => {
   client.connect(async (err) => {
     const collection = client.db("MongoDB").collection("TelegramBot");
