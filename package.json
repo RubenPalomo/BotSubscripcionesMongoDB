@@ -1,0 +1,17 @@
+{
+  "name": "botadmin",
+  "version": "1.0.0",
+  "description": "Bot to admin telegram groups",
+  "main": "botadmin.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Rubén Palomo Fontán",
+  "license": "ISC",
+  "dependencies": {
+    "@iamtraction/google-translate": "github:iamtraction/google-translate",
+    "mongodb": "^4.13.0",
+    "node-telegram-bot-api": "^0.60.0"
+  }
+}
